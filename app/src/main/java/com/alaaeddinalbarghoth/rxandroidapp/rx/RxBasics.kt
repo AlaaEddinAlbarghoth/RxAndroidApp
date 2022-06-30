@@ -3,7 +3,9 @@ package com.alaaeddinalbarghoth.rxandroidapp.rx
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
-
+import logcat.LogPriority.ERROR
+import logcat.LogPriority.INFO
+import logcat.logcat
 
 class RxBasics {
 
@@ -12,20 +14,22 @@ class RxBasics {
         val dataObserver = object : Observer<Int> {
 
             override fun onSubscribe(d: Disposable) {
-
+                logcat(INFO) { "testObservables onSubscribe" }
             }
 
             override fun onNext(t: Int) {
-                TODO("Not yet implemented")
+                logcat(INFO) { "testObservables onNext $t" }
             }
 
             override fun onError(e: Throwable) {
-                TODO("Not yet implemented")
+                logcat(ERROR) { "testObservables onError" }
             }
 
             override fun onComplete() {
-                TODO("Not yet implemented")
+                logcat(INFO) { "testObservables onComplete" }
             }
         }
+
+        dataStream.subscribe(dataObserver)
     }
 }
