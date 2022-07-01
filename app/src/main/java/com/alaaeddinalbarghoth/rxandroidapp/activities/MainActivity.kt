@@ -1,7 +1,9 @@
-package com.alaaeddinalbarghoth.rxandroidapp
+package com.alaaeddinalbarghoth.rxandroidapp.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.alaaeddinalbarghoth.rxandroidapp.R
 import com.alaaeddinalbarghoth.rxandroidapp.rx.RxBasics
 import com.alaaeddinalbarghoth.rxandroidapp.rx.RxOperators
 
@@ -18,7 +20,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        basicsTimer()
+//        basicsTimer()
+        startActivity(Intent(this, ApiActivity::class.java))
     }
 
     /* region Worked */
